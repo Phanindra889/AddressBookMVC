@@ -1,0 +1,47 @@
+﻿@model Model.Models.ContactInformation
+
+
+<html>
+    <head>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    </head>
+    <body>
+        <div class="page-header">
+        <h1 class="page-heading">Address Book</h1>
+    </div>
+    <div class="page-navigators">
+        <ul class="navigator-items">
+            <li class="navigator-item">Home</li>
+            <li class="navigator-item">
+                <a asp-area="" asp-controller="AddressBook" asp-action="Form">+Add</a>
+            </li>
+            <img class="nav-blog-image" src="blog-icon.png" alt="blog image" />
+        </ul>
+    </div>
+        <div class="main-body">
+        <p class="contact">Contact</p>
+        <form class="add-contact-form" id="form">
+            <div class="form-items">
+                <label for="name">Name</label><br />
+                <input type="text" id="name" name="name" /><br />
+                <label for="email">Email</label><br />
+                <input type="text" id="email" asp-for="Email" onkeyup="validateEmailId()" /><br />
+                <div class="contact-labels">
+                    <label for="mobile">Mobile</label><span id="mobile-field-check" class="validations">*</span>
+                    <label for="landline" id="land-line">Landline</label><span id="landline-check" class="validations"></span>
+                </div>
+                <div class="contact-inputs">
+                    <input type="text" id="mobile" asp-for="Mobile" onblur="validateMobileNumber()" />
+                    <input type="text" id="landline" asp-for="Landline" onblur="validateLandline()" />
+                </div>
+                <label for="website">Website</label><span id="website-check" class="validations">*</span> <br />
+                <input type="text" id="website" asp-for="Website" onkeyup="validateWebsite()" /><br />
+                <label for="address">Address</label><br />
+                <textarea id="address" asp-for="Address"></textarea><br />
+                <button id="add-button" class="add-details" onclick="groupFormData(this.id)">Add</button>
+            </div>
+        </form>
+    </body>
+</html>

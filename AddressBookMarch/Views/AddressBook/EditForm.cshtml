@@ -1,0 +1,35 @@
+﻿@model Model.Models.ContactInformation
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+<html>
+    <head>
+        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    </head>
+    <body>
+    <form id="form" asp-action="UpdateContact" asp-route-id="@Model.Id">
+            <div class="form-items">
+            <label for="name">Name</label><span asp-validation-for="Name" class="text-danger"></span><br />
+            <input type="text" id="name" asp-for="Name" /><br />
+            <label for="email">Email</label><span asp-validation-for="Email" class="text-danger"></span><br />
+            <input type="text" id="email" asp-for="Email" /><br />
+                <div class="contact-labels">
+                <label for="mobile">Mobile</label><span asp-validation-for="Mobile" class="text-danger"></span>
+                    <label for="landline">Landline</label>
+                </div>
+                <div class="contact-inputs">
+                <input type="text" id="mobile" asp-for="Mobile" />
+                <input type="text" id="landline" asp-for="Landline"  />
+                </div>
+            <label for="website">Website</label><span asp-validation-for="Website" class="text-danger"></span><br />
+            <input type="text" id="website" asp-for="Website" /><br />
+            <label for="address">Address</label><br />
+            <textarea id="address" asp-for="Address" rows="8"></textarea><br />
+                <button type="submit" class="add-details" >Update</button>
+            </div>
+        </form>
+    </body>
+</html>

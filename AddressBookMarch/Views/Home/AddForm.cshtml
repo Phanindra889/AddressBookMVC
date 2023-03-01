@@ -1,0 +1,23 @@
+﻿
+
+<form class="add-contact-form" id="form">
+    <div class="form-items">
+        <label for="name">Name</label><span id="name-field-check" class="validations">*</span><br />
+        <input type="text" id="name" name="name" /><br />
+        <label for="email">Email</label><span id="email-field-check" class="validations">*</span><br />
+        <input type="text" id="email" name="email" onkeyup="validateEmailId()" /><br />
+        <div class="contact-labels">
+            <label for="mobile">Mobile</label><span id="mobile-field-check" class="validations">*</span>
+            <label for="landline">Landline</label><span id="landline-check" class="validations"></span>
+        </div>
+        <div class="contact-inputs">
+            <input type="text" id="mobile" name="mobile" onblur="validateMobileNumber()" />
+            <input type="text" id="landline" name="landline" onblur="validateLandline()" />
+        </div>
+        <label for="website">Website</label><span id="website-check" class="validations">*</span> <br />
+        <input type="text" id="website" name="website" onkeyup="validateWebsite()" /><br />
+        <label for="address">Address</label><br />
+        <textarea id="address" name="address" rows="8"></textarea><br />
+        <button id="add-button" class="add-details" onclick="groupFormData(this.id)">Add</button>
+    </div>
+</form>

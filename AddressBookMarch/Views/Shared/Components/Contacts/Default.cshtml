@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Model.Models.ContactInformation>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+            <div class="border  left-details">
+                <a class="short-details" asp-controller="AddressBook" asp-action="ViewDetails" asp-route-Id="@item.Id">
+                    <p class="fs-2">@item.Name</p>
+                    <p class="fs-6">@item.Email</p>
+                    <p class="fs-6">@item.Mobile</p>
+                </a>
+            </div>
+    }
+</body>
+</html>

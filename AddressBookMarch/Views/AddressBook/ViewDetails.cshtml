@@ -1,0 +1,22 @@
+﻿@model Model.Models.ContactInformation
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="right-body" id="full-details">
+        <div class="edit-delete">
+            <img src="~/images/edit1.jpg" alt="edit" class="edit-icon"> <a class="edit-text" asp-action="EditForm" asp-route-Id="@Model.Id">Edit</a>
+            <img src="~/images/delete1.png" alt="delete" class="delete-icon"> <a class="delete-text" asp-action="Delete" asp-route-Id="@Model.Id">Delete</a>
+        </div>
+        <div class="full-details">
+            <p id='right-name'>@Model.Name</p>
+            <div class="email-set"> <p id='email-label'>Email Id :</p><p id='right-email'>@Model.Email</p></div>
+            <div class='mobile-set'><p id='mobile-number-label'>Mobile Number :</p><p id='right-mobile'>@Model.Mobile</p></div>
+            <div class='landline-set'><p id='landline-label'>Landline : </p><p id='right-landline'>@Model.Landline</p></div>
+            <div class='website-set'><p id='website-label'>Website :</p><p id='right-website'>@Model.Website</p></div>
+            <div class='address-set'><p id='address-label'>Address :</p><p id='right-address'>@Model.Address</p></div>
+        </div>
+    </div>
+</body>
+</html>
